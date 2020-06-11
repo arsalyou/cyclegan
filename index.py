@@ -1,11 +1,12 @@
 import os
-
+from flask_ngrok import run_with_ngrok
 from flask import Flask, request, send_file
 from werkzeug.utils import secure_filename
 
 from test import driver
 
 app = Flask(__name__, static_url_path='/static')
+run_with_ngrok(app)
 if not os.path.exists(os.path.join(app.instance_path, 'uploads/testA')):
     os.makedirs(os.path.join(app.instance_path, 'uploads/testA'))
 
@@ -41,4 +42,4 @@ def startProcess():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
