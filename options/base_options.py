@@ -23,7 +23,7 @@ class BaseOptions():
         """Define the common options that are used in both training and test."""
         # basic parameters
         parser.add_argument('--dataroot', default=os.path.abspath(os.path.join(
-            '..', os.getcwd())) + "/instance/uploads/testA", required=True,
+            '..', os.getcwd())) + "/instance/uploads/testA", required=False,
                             help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
         parser.add_argument('--name', type=str, default=name,
                             help='name of the experiment. It decides where to store samples and models')
